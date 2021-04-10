@@ -12,17 +12,28 @@
     
     <!-- import the webpage's javascript file -->
     <script src="/script.js" defer></script>
+    <script src="/p5.min.js" async></script>
+    
   </head>  
   <body>
-    <h1>Hi there!</h1>
-    
-    <p>
-      I'm your cool new webpage. Made with <a href="https://glitch.com">Glitch</a>!
-    </p>
+    <script>
+            console.log("hi");
+      let box;
 
-    <!-- include the Glitch button to show what the webpage is about and
-          to make it easier for folks to view source and remix -->
-    <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
-    <script src="https://button.glitch.me/button.js" defer></script>
+      function preload() {
+        box = loadModel('https://cdn.glitch.com/48328cdf-9a76-4aa3-b463-44c89c3b2b55%2F2.obj?v=1618060363584');
+      }
+
+      function setup() {
+        createCanvas(500, 500, WEBGL);
+      }
+
+      function draw() {
+        background(0);
+        rotateX(frameCount * 0.01);
+        rotateY(frameCount * 0.01);
+        model(box);
+      }
+    </script>
   </body>
 </html>
