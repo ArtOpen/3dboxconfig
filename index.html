@@ -25,16 +25,21 @@
       }
 
       function setup() {
-        createCanvas(800, 500, WEBGL);
+        createCanvas(600, 600, WEBGL);
       }
 
       function draw() {
         background(20);
-        //rotateX(frameCount * 0.01);
+        orbitControl();
+        rotateX(3.15);
+        rotateZ(1);
         rotateY(frameCount * 0.001);
         normalMaterial();
         scale(20);
+        
+        
         model(box);
+        
       }
     </script>
   </body>
