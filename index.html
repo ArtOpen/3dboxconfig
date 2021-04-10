@@ -21,17 +21,18 @@
       let box;
 
       function preload() {
-        box = loadModel('https://cdn.glitch.com/48328cdf-9a76-4aa3-b463-44c89c3b2b55%2F2.obj?v=1618060363584');
+        box = loadModel('https://art-open.pl/2.obj');
       }
 
       function setup() {
-        createCanvas(500, 500, WEBGL);
+        createCanvas(900, 900, WEBGL);
       }
 
       function draw() {
         background(0);
-        rotateX(frameCount * 0.01);
         rotateY(frameCount * 0.01);
+        normalMaterial();
+        scale(5);
         model(box);
       }
     </script>
