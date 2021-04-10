@@ -21,18 +21,19 @@
       let box;
 
       function preload() {
-        box = loadModel('https://art-open.pl/2.obj');
+        box = loadModel('https://art-open.pl/box.obj');
       }
 
       function setup() {
-        createCanvas(900, 900, WEBGL);
+        createCanvas(800, 500, WEBGL);
       }
 
       function draw() {
-        background(0);
-        rotateY(frameCount * 0.01);
+        background(20);
+        //rotateX(frameCount * 0.01);
+        rotateY(frameCount * 0.001);
         normalMaterial();
-        scale(5);
+        scale(20);
         model(box);
       }
     </script>
