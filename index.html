@@ -43,13 +43,25 @@
 
         rotateY(frameCount * 0.001);
 
+        let theInput = document.getElementById("color");
+        let theColor = theInput.value;
+        
+        theInput.addEventListener("input", function() {console.log(theColor);ambientMaterial(theColor);}, false);
+        
+        
         //normalMaterial();
+        
+        
         scale(25);
 
         model(box);
         console.log("hello 3d box");
       }
     </script>
+    
+    <div style="position:absolute;width:66.667%;top:0px;left:33.33%">
+      
+    </div>
 
     <div
       class="sidepanel"
@@ -100,85 +112,84 @@
               Specyfikacja
             </h3>
           </div>
-          
+
           <div style="padding-left:10%">
             <h3>
               Presonalizacja
             </h3>
-            
-            <br>
-          
 
-          <label for="color">Color:</label>
+            <br />
 
-          <input id="color" type="color" />
+            <label for="color">Color:</label>
 
-          <br />
-          <br />
+            <input id="color" type="color" />
 
-          <label for="color">logotyp:</label>
+            <br />
+            <br />
 
-          <input value="logotyp" type="checkbox" />
+            <label for="logotyp">logotyp:</label>
 
-          <br /><br />
-          <label for="logopos">pozycja logotypu:</label>
-          <select id="logopos" name="pozycja logo">
-            <option value="srodek">srodek</option>
-            <option value="lewa">lewa</option>
-            <option value="prawa">prawa</option>
-            <option value="tyl">tył</option>
-            <option value="przod">przód</option>
-          </select>
+            <input value="logotyp" type="checkbox" />
 
-          <br />
-          <br />
+            <br /><br />
+            <label for="logopos">pozycja logotypu:</label>
+            <select id="logopos" name="pozycja logo">
+              <option value="srodek">srodek</option>
+              <option value="lewa">lewa</option>
+              <option value="prawa">prawa</option>
+              <option value="tyl">tył</option>
+              <option value="przod">przód</option>
+            </select>
 
-          <label for="myfile">Wybierz plik:</label>
-          <input type="file" id="myfile" name="myfile" /><br /><br />
+            <br />
+            <br />
 
-          <br /><br />
+            <label for="myfile">Wybierz plik:</label>
+            <input type="file" id="myfile" name="myfile" /><br /><br />
 
-        </div>
-        
-        <div style="background-color:orange;position:absolute;bottom:0px;padding-left:10%;height:21.33%;width:90%;padding-bottom:0%;">
-          
-          <div style="display:flex;padding-top:5%">
-            <label for="ilosc">Ilość palet:</label>
-            &nbsp;
-            <input
-              type="number"
-              id="ilosc"
-              style="max-width:40px"
-              name="ilosc"
-            /><br /><br />
-            &nbsp;&nbsp;
-            <label for="pu">Ilość PU:</label>
-            &nbsp;
-            <input
-              type="number"
-              id="pu"
-              style="max-width:40px"
-              name="ilosc pu"
-            /><br /><br />
+            <br /><br />
           </div>
 
-          <br /><br />
-          
-          <input type="submit" value="Wyślij" />
-          <br>
-          <br>
-          <sub>Data processing info</sub>
-          <div id="infoicon" style="text-align:right;margin-right:30px">
-            <b>i</b>
+          <div
+            style="background-color:orange;position:absolute;bottom:0px;padding-left:10%;height:21.33%;width:90%;padding-bottom:0%;"
+          >
+            <div style="display:flex;padding-top:5%">
+              <label for="ilosc">Ilość palet:</label>
+              &nbsp;
+              <input
+                type="number"
+                id="ilosc"
+                style="max-width:40px"
+                name="ilosc"
+              /><br /><br />
+              &nbsp;&nbsp;
+              <label for="pu">Ilość PU:</label>
+              &nbsp;
+              <input
+                type="number"
+                id="pu"
+                style="max-width:40px"
+                name="ilosc pu"
+              /><br /><br />
+            </div>
+
+            <br /><br />
+
+            <input type="submit" value="Wyślij" />
+            <br />
+            <br />
+            <sub>Data processing info</sub>
+            <div id="infoicon" style="text-align:right;margin-right:30px">
+              <b>i</b>
+            </div>
           </div>
-        </div>
-          
         </form>
-        
       </div>
     </div>
 
-    <div style="position:absolute;z-index:0;bottom:0px;left:0px;width:100%;height:21.33%;background-color:darkorange;"></div>
+    <div
+      style="position:absolute;z-index:0;bottom:0px;left:0px;width:100%;height:21.33%;background-color:darkorange;"
+    ></div>
 
     <div></div>
   </body>
