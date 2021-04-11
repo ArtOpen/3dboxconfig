@@ -26,7 +26,7 @@
       }
 
       function setup() {
-        createCanvas(600, 600, WEBGL);
+        createCanvas(windowWidth/1.5, windowHeight/1.5, WEBGL);
       }
 
       function draw() {
@@ -42,11 +42,11 @@
         translate(0, 80, 0);
         rotateX(3.15);
         
-        if (!mouseIsPressed){
-        rotateY(frameCount*0.001);
-        }
         
-        normalMaterial();
+        rotateY(frameCount*0.001);
+      
+        
+        //normalMaterial();
         scale(25);
         
         
@@ -57,8 +57,24 @@
       }
     </script>
     
-    <div style="width:40%;height:100%;background-color:blue;position:absolute;"> 
-      test
+    <div style="width:33.33%;height:100%;background-color:blue;position:absolute;"> 
+      <div class="logonav">
+        
+      </div>
+      <form class="main" action="/process.php">
+        
+        <label for="color">Color:</label>
+          <select id="color" name="color">
+            <option value="multicolor">multicolor</option>
+            <option value="black">black</option>
+            <option value="white">white</option>
+            <option value="yellow">yellow</option>
+          </select>
+        
+        <label for="color">logotyp:</label>
+        
+        
+      </form>
     </div>
     
     
