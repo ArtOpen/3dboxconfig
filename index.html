@@ -1,84 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Hello!</title>
-    
+
     <!-- import the webpage's stylesheet -->
-    <link rel="stylesheet" href="/style.css">
-    
+    <link rel="stylesheet" href="/style.css" />
+
     <!-- import the webpage's javascript file -->
     <script src="/script.js" defer></script>
     <script src="/p5.min.js" async></script>
-    
-  </head>  
+  </head>
   <body>
     <script>
       //3D RENDER & orbitControl
-            
+
       let box;
 
       function preload() {
-        box = loadModel('https://art-open.pl/box.obj');
+        //box = loadModel("https://art-open.pl/box.obj");
       }
 
       function setup() {
-        createCanvas(windowWidth/1.5, windowHeight/1.5, WEBGL);
+        createCanvas(windowWidth / 1.5, windowHeight / 1.5, WEBGL);
       }
 
       function draw() {
         background(20);
         orbitControl();
-        
+
         let locX = mouseX - height / 2;
         let locY = mouseY - width / 2;
-        
+
         ambientLight(60, 60, 60);
         pointLight(255, 255, 255, locX, locY, 100);
-        
+
         translate(0, 80, 0);
         rotateX(3.15);
-        
-        
-        rotateY(frameCount*0.001);
-      
-        
+
+        rotateY(frameCount * 0.001);
+
         //normalMaterial();
         scale(25);
-        
-        
-        
-        model(box);
+
+        //model(box);
         console.log("hello 3d box");
-        
       }
     </script>
-    
-    <div style="width:33.33%;height:100%;background-color:blue;position:absolute;"> 
-      <div class="logonav">
-        
+
+    <div
+      style="width:33.33%;height:100%;background-color:blue;position:absolute;"
+    >
+      <div class="logonav" style="text-align:center;margin-top:10%">
+      <img src="https://glitch.com/edit/images/illustrations/new-stuff-doggo.svg" width="50px" />
+      <br>
+      <h1>
+        3d box configurator
+        </h1>
+      <h2>i got 5 spots</h2>
       </div>
+      
+      
       <form class="main" action="/process.php">
-        
         <label for="color">Color:</label>
-          <select id="color" name="color">
-            <option value="multicolor">multicolor</option>
-            <option value="black">black</option>
-            <option value="white">white</option>
-            <option value="yellow">yellow</option>
-          </select>
-        
+        <input id="color" type="color" />
+
+
         <label for="color">logotyp:</label>
+        <input type="checkbox" />
         
+        <select id="logopos" name="pozycja logo">
+          <option value="srodek">srodek</option>
+          <option value="lewa">lewa</option>
+          <option value="prawa">prawa</option>
+          <option value="tyl">tył</option>
+          <option value="przod">przód</option>
+        </select>
         
+        <label for="myfile">Select a file:</label>
+          <input type="file" id="myfile" name="myfile"><br><br>
+          <input type="submit" value="Submit">
       </form>
     </div>
-    
-    
-    
-    
   </body>
 </html>
