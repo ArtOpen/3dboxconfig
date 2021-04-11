@@ -2,5 +2,12 @@
 
 body {
   font-family: helvetica, arial, sans-serif;
-  margin: 2em;
+  background-color: yellow;
+  padding: 0px;
+  margin: 0px;
+}
+
+#defaultCanvas0 {
+  position: absolute;
+  right: 0px;
 }
